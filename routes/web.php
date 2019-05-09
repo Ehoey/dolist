@@ -22,3 +22,5 @@ Route::get('dolists','dolistsController@index');
 Route::get('/dolists/{dolist}','dolistsController@show');
 Route::get('/new-dolist','dolistsController@create');
 Route::post('store-dolists','dolistsController@store');
+Route::get('dolists/{dolist}/edit','dolistsController@edit');
+Route::post('/dolists/{dolist}/update-dolist','dolistsController@update');
