@@ -11,7 +11,7 @@
                             @foreach($dolists as $dolist)
                                 <li class="list-group-item">
                                     {{$dolist->name}}
-                                    <a href="/" class="btn btn-primary btn-sm float-right">View</a>
+                                    <a href="/dolists/{{$dolist->id}}" class="btn btn-primary btn-sm float-right">View</a>
                                 </li>
                             @endforeach
                         </ul>
