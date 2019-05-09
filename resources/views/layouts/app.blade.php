@@ -35,11 +35,11 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/dolists">Wish list <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/dolists">do list <span class="sr-only">(current)</span></a>
                 </li>
                 @auth
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Create wish <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/new-dolist">Create list <span class="sr-only">(current)</span></a>
                     </li>
                 @endauth
             </ul>
@@ -89,7 +89,7 @@
                                 <a href="/dolists">do list</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="/">Create list</a>
+                                <a href="/new-dolist">Create list</a>
                             </li>
                         </ul>
                     </div>
