@@ -56,9 +56,17 @@ class dolist extends Model
     }
     public function isComplete($dolistId){
 
-        $dolist=dolist::find($dolistId);
-        $dolist->completed=true;
-        $dolist->save();
+        try{
+
+            $dolist=dolist::find($dolistId);
+            $dolist->completed=true;
+            $dolist->save();
+
+        }catch (\Exception $e){
+
+            return false;
+
+        }
 
     }
 
