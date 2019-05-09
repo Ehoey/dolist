@@ -63,4 +63,14 @@ class dolistsController extends Controller
         return redirect('/dolists');
 
     }
+    public function complete($dolistId){
+
+
+        $dolist=dolist::find($dolistId);
+        $dolist->isComplete($dolistId);
+        session()->flash('success','dolist completed successfully');
+        return redirect('/dolists');
+
+
+    }
 }

@@ -54,4 +54,12 @@ class dolist extends Model
 
         }
     }
+    public function isComplete($dolistId){
+
+        $dolist=dolist::find($dolistId);
+        $dolist->completed=true;
+        $dolist->save();
+
+    }
+
 }

@@ -11,7 +11,10 @@
                             @foreach($dolists as $dolist)
                                 <li class="list-group-item">
                                     {{$dolist->name}}
-                                    <a href="/dolists/{{$dolist->id}}" class="btn btn-primary btn-sm float-right">View</a>
+                                    @if(!$dolist->completed)
+                                        <a href="/dolists/{{$dolist->id}}/complete" style="color: #fff; background-color: #f1de39f2;" class="btn btn-warning btn-sm float-right">Completed</a>
+                                    @endif
+                                    <a href="/dolists/{{$dolist->id}}" class="btn btn-primary btn-sm float-right mr-2">View</a>
                                 </li>
                             @endforeach
                         </ul>
