@@ -1,13 +1,23 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>dolist page</h1>
-</body>
-</html>
+@extends('layouts.app')
+@section('content')
+    <div class="container">
+        <h1 class="text-center my-2">Wish list</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <div class="card card-default">
+                    <div class="card-header">Wish list</div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            @foreach($dolists as $dolist)
+                                <li class="list-group-item">
+                                    {{$dolist->name}}
+                                    <a href="/" class="btn btn-primary btn-sm float-right">View</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
