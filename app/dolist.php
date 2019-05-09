@@ -39,4 +39,17 @@ class dolist extends Model
 
         }
     }
+    public function deleteData($dolistId){
+
+        try{
+
+            $dolist=dolist::find($dolistId);
+            $dolist->delete();
+
+        }catch (\Exception $e){
+
+            return false;
+
+        }
+    }
 }

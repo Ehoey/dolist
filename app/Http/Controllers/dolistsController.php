@@ -39,6 +39,7 @@ class dolistsController extends Controller
     public function edit($dolistId){
 
         return view('dolists.edit')->with('dolists',dolist::find($dolistId));
+
     }
     public function update($dolistId){
         $this->validate(request(),[
@@ -49,6 +50,13 @@ class dolistsController extends Controller
         $data=request()->all();
         $dolist= dolist::find($dolistId);
         $dolist->updateData($data,$dolistId);
+        return redirect('/dolists');
+
+    }
+    public function destroy($dolistId){
+
+        $dolist=new dolist;
+        $dolist->deleteData($dolistId);
         return redirect('/dolists');
 
     }

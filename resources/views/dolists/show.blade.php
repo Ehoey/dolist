@@ -12,7 +12,7 @@
                 </div>
                 @auth
                     <a href="/dolists/{{$dolists->id}}/edit" class="btn btn-info btn-sm my-3">Edit</a>
-                    <a href="" class="btn btn-danger btn-sm my-3">Delete</a>
+                    <a href="/dolists/{{$dolists->id}}/delete" class="btn btn-danger btn-sm my-3">Delete</a>
                 @endauth
             </div>
         </div>
