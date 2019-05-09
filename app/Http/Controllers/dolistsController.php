@@ -33,6 +33,7 @@ class dolistsController extends Controller
         $data=request()->all();
         $dolist=new dolist();
         $dolist->newDolist($data);
+        session()->flash('success','dolist created successfully');
         return redirect('/dolists');
 
     }
@@ -50,6 +51,7 @@ class dolistsController extends Controller
         $data=request()->all();
         $dolist= dolist::find($dolistId);
         $dolist->updateData($data,$dolistId);
+        session()->flash('success','dolist created successfully');
         return redirect('/dolists');
 
     }
@@ -57,6 +59,7 @@ class dolistsController extends Controller
 
         $dolist=new dolist;
         $dolist->deleteData($dolistId);
+        session()->flash('success','dolist deleted successfully');
         return redirect('/dolists');
 
     }

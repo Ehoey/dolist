@@ -10,12 +10,11 @@ class dolist extends Model
 
         try{
 
-            $dolist= dolist::class;
+            $dolist=new dolist;
             $dolist->name=$data['name'];
             $dolist->description=$data['description'];
             $dolist->completed=false;
             $dolist->save();
-
         }catch (\Exception $e){
 
             return false;
@@ -33,6 +32,7 @@ class dolist extends Model
             $dolist->completed=false;
             $dolist->save();
 
+
         }catch (\Exception $e){
 
             return false;
@@ -45,6 +45,8 @@ class dolist extends Model
 
             $dolist=dolist::find($dolistId);
             $dolist->delete();
+            session()->flash('success','dolist deleted successfully');
+
 
         }catch (\Exception $e){
 
